@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-55-u0b">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="71" id="Q0h-B3-hlt">
@@ -44,7 +44,14 @@
                             <constraint firstItem="G9O-55-u0b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ujk-3m-6VX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Item" id="VyC-7T-iMj"/>
+                    <navigationItem key="navigationItem" title="Item" id="VyC-7T-iMj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XT1-Rw-RkL">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="Vb3-VL-3UB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,10 +103,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Category" id="kCP-lg-d5c">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qeB-U6-JIn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jd8-b9-c3b">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="p47-f2-6b9"/>
+                                <action selector="addButtonPressed:" destination="FAV-D8-1WI" id="zHr-qR-TSg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

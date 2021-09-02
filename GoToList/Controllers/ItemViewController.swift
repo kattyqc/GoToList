@@ -6,14 +6,34 @@
 //
 
 import UIKit
+import CoreData
 
-class ItemViewController: UITableViewController {
+class ItemViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
 
+    var itemArray = [Item]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+//MARRK: - Data Source UITableViewController
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemArray.count
+    }
+    
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        
+        cell.textLabel?.text =  itemArray[indexPath.row].name
+        
+        return cell
+    }
 
-
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+   
+    
+    }
+    
 }
 

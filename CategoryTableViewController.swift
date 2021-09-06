@@ -31,6 +31,15 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - TableView Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailCategory = storyboard?.instantiateViewController(identifier: "DetailVC") as! ItemViewController
+        detailCategory.detailCategories = categories[indexPath.row]
+        navigationController?.pushViewController(detailCategory, animated: true)
+    }
+    
     //MARK: - Data Manipulation Methods
     
     func saveCategories() {
@@ -79,5 +88,7 @@ class CategoryTableViewController: UITableViewController {
         }
         present(alert, animated: true, completion: nil)
     }
+    
+    
     
 }
